@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">REM  *****  BASIC  *****
+
+Sub Main
+
+End Sub
+
+
+
+sub Card_Emphasis
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(0) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;Bold&quot;
+args1(0).Value = true
+
+dispatcher.executeDispatch(document, &quot;.uno:Bold&quot;, &quot;&quot;, 0, args1())
+
+rem ----------------------------------------------------------------------
+dim args2(2) as new com.sun.star.beans.PropertyValue
+args2(0).Name = &quot;Underline.LineStyle&quot;
+args2(0).Value = 1
+args2(1).Name = &quot;Underline.HasColor&quot;
+args2(1).Value = false
+args2(2).Name = &quot;Underline.Color&quot;
+args2(2).Value = -1
+
+dispatcher.executeDispatch(document, &quot;.uno:Underline&quot;, &quot;&quot;, 0, args2())
+
+rem ----------------------------------------------------------------------
+dim args3(4) as new com.sun.star.beans.PropertyValue
+args3(0).Name = &quot;CharFontName.StyleName&quot;
+args3(0).Value = &quot;&quot;
+args3(1).Name = &quot;CharFontName.Pitch&quot;
+args3(1).Value = 2
+args3(2).Name = &quot;CharFontName.CharSet&quot;
+args3(2).Value = 0
+args3(3).Name = &quot;CharFontName.Family&quot;
+args3(3).Value = 5
+args3(4).Name = &quot;CharFontName.FamilyName&quot;
+args3(4).Value = &quot;Liberation Sans&quot;
+
+dispatcher.executeDispatch(document, &quot;.uno:CharFontName&quot;, &quot;&quot;, 0, args3())
+
+rem ----------------------------------------------------------------------
+dim args4(2) as new com.sun.star.beans.PropertyValue
+args4(0).Name = &quot;FontHeight.Height&quot;
+args4(0).Value = 10
+args4(1).Name = &quot;FontHeight.Prop&quot;
+args4(1).Value = 100
+args4(2).Name = &quot;FontHeight.Diff&quot;
+args4(2).Value = 0
+
+dispatcher.executeDispatch(document, &quot;.uno:FontHeight&quot;, &quot;&quot;, 0, args4())
+
+
+end sub
+
+sub Card_Minimize
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(4) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;CharFontName.StyleName&quot;
+args1(0).Value = &quot;&quot;
+args1(1).Name = &quot;CharFontName.Pitch&quot;
+args1(1).Value = 2
+args1(2).Name = &quot;CharFontName.CharSet&quot;
+args1(2).Value = 0
+args1(3).Name = &quot;CharFontName.Family&quot;
+args1(3).Value = 5
+args1(4).Name = &quot;CharFontName.FamilyName&quot;
+args1(4).Value = &quot;Liberation Sans&quot;
+
+dispatcher.executeDispatch(document, &quot;.uno:CharFontName&quot;, &quot;&quot;, 0, args1())
+
+rem ----------------------------------------------------------------------
+dim args2(2) as new com.sun.star.beans.PropertyValue
+args2(0).Name = &quot;FontHeight.Height&quot;
+args2(0).Value = 8
+args2(1).Name = &quot;FontHeight.Prop&quot;
+args2(1).Value = 100
+args2(2).Name = &quot;FontHeight.Diff&quot;
+args2(2).Value = 0
+
+dispatcher.executeDispatch(document, &quot;.uno:FontHeight&quot;, &quot;&quot;, 0, args2())
+
+rem ----------------------------------------------------------------------
+dim args3(0) as new com.sun.star.beans.PropertyValue
+args3(0).Name = &quot;Bold&quot;
+args3(0).Value = false
+
+dispatcher.executeDispatch(document, &quot;.uno:Bold&quot;, &quot;&quot;, 0, args3())
+
+rem ----------------------------------------------------------------------
+dim args4(2) as new com.sun.star.beans.PropertyValue
+args4(0).Name = &quot;Underline.LineStyle&quot;
+args4(0).Value = 0
+args4(1).Name = &quot;Underline.HasColor&quot;
+args4(1).Value = false
+args4(2).Name = &quot;Underline.Color&quot;
+args4(2).Value = -1
+
+dispatcher.executeDispatch(document, &quot;.uno:Underline&quot;, &quot;&quot;, 0, args4())
+
+
+end sub
+
+
+sub Pocket
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(1) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;Template&quot;
+args1(0).Value = &quot;Heading 1&quot;
+args1(1).Name = &quot;Family&quot;
+args1(1).Value = 2
+
+dispatcher.executeDispatch(document, &quot;.uno:StyleApply&quot;, &quot;&quot;, 0, args1())
+
+
+end sub
+
+sub Hat
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(1) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;Template&quot;
+args1(0).Value = &quot;Heading 2&quot;
+args1(1).Name = &quot;Family&quot;
+args1(1).Value = 2
+
+dispatcher.executeDispatch(document, &quot;.uno:StyleApply&quot;, &quot;&quot;, 0, args1())
+
+
+end sub
+
+
+sub Block
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(1) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;Template&quot;
+args1(0).Value = &quot;Heading 3&quot;
+args1(1).Name = &quot;Family&quot;
+args1(1).Value = 2
+
+dispatcher.executeDispatch(document, &quot;.uno:StyleApply&quot;, &quot;&quot;, 0, args1())
+
+rem ----------------------------------------------------------------------
+dim args2(0) as new com.sun.star.beans.PropertyValue
+args2(0).Name = &quot;FontColor&quot;
+args2(0).Value = 6710886
+
+dispatcher.executeDispatch(document, &quot;.uno:FontColor&quot;, &quot;&quot;, 0, args2())
+
+rem ----------------------------------------------------------------------
+dim args3(0) as new com.sun.star.beans.PropertyValue
+args3(0).Name = &quot;FontColor&quot;
+args3(0).Value = 3355443
+
+dispatcher.executeDispatch(document, &quot;.uno:FontColor&quot;, &quot;&quot;, 0, args3())
+
+
+end sub
+
+
+sub Cite
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(2) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;FontHeight.Height&quot;
+args1(0).Value = 12
+args1(1).Name = &quot;FontHeight.Prop&quot;
+args1(1).Value = 100
+args1(2).Name = &quot;FontHeight.Diff&quot;
+args1(2).Value = 0
+
+dispatcher.executeDispatch(document, &quot;.uno:FontHeight&quot;, &quot;&quot;, 0, args1())
+
+rem ----------------------------------------------------------------------
+dim args2(4) as new com.sun.star.beans.PropertyValue
+args2(0).Name = &quot;CharFontName.StyleName&quot;
+args2(0).Value = &quot;&quot;
+args2(1).Name = &quot;CharFontName.Pitch&quot;
+args2(1).Value = 2
+args2(2).Name = &quot;CharFontName.CharSet&quot;
+args2(2).Value = 0
+args2(3).Name = &quot;CharFontName.Family&quot;
+args2(3).Value = 5
+args2(4).Name = &quot;CharFontName.FamilyName&quot;
+args2(4).Value = &quot;Liberation Sans&quot;
+
+dispatcher.executeDispatch(document, &quot;.uno:CharFontName&quot;, &quot;&quot;, 0, args2())
+
+rem ----------------------------------------------------------------------
+dim args3(0) as new com.sun.star.beans.PropertyValue
+args3(0).Name = &quot;Bold&quot;
+args3(0).Value = true
+
+dispatcher.executeDispatch(document, &quot;.uno:Bold&quot;, &quot;&quot;, 0, args3())
+
+rem ----------------------------------------------------------------------
+dim args4(2) as new com.sun.star.beans.PropertyValue
+args4(0).Name = &quot;Underline.LineStyle&quot;
+args4(0).Value = 1
+args4(1).Name = &quot;Underline.HasColor&quot;
+args4(1).Value = false
+args4(2).Name = &quot;Underline.Color&quot;
+args4(2).Value = -1
+
+dispatcher.executeDispatch(document, &quot;.uno:Underline&quot;, &quot;&quot;, 0, args4())
+
+rem ----------------------------------------------------------------------
+dim args5(2) as new com.sun.star.beans.PropertyValue
+args5(0).Name = &quot;Underline.LineStyle&quot;
+args5(0).Value = 0
+args5(1).Name = &quot;Underline.HasColor&quot;
+args5(1).Value = false
+args5(2).Name = &quot;Underline.Color&quot;
+args5(2).Value = -1
+
+dispatcher.executeDispatch(document, &quot;.uno:Underline&quot;, &quot;&quot;, 0, args5())
+
+
+end sub
+
+
+sub Tag
+rem ----------------------------------------------------------------------
+rem define variables
+dim document   as object
+dim dispatcher as object
+rem ----------------------------------------------------------------------
+rem get access to the document
+document   = ThisComponent.CurrentController.Frame
+dispatcher = createUnoService(&quot;com.sun.star.frame.DispatchHelper&quot;)
+
+rem ----------------------------------------------------------------------
+dim args1(1) as new com.sun.star.beans.PropertyValue
+args1(0).Name = &quot;Template&quot;
+args1(0).Value = &quot;Heading&quot;
+args1(1).Name = &quot;Family&quot;
+args1(1).Value = 2
+
+dispatcher.executeDispatch(document, &quot;.uno:StyleApply&quot;, &quot;&quot;, 0, args1())
+
+rem ----------------------------------------------------------------------
+dim args2(0) as new com.sun.star.beans.PropertyValue
+args2(0).Name = &quot;FontColor&quot;
+args2(0).Value = 3355443
+
+dispatcher.executeDispatch(document, &quot;.uno:FontColor&quot;, &quot;&quot;, 0, args2())
+
+
+end sub
+</script:module>
